@@ -6,6 +6,8 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import {DetailCharacters} from "./views/detailCharacters.jsx"
+
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -25,10 +27,10 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+						<Route exact path="/detailCharacters">
+							<DetailCharacters />
 						</Route>
-						<Route exact path="/single/:theid">
+						<Route exact path="/detailPlanets">
 							<Single />
 						</Route>
 						<Route>
