@@ -7,7 +7,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import {DetailCharacters} from "./views/detailCharacters.jsx"
-
+import { DetailPlanets } from "./views/detailPlanets.jsx";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -31,7 +31,7 @@ const Layout = () => {
 							<DetailCharacters />
 						</Route>
 						<Route exact path="/detailPlanets">
-							<Single />
+							<DetailPlanets/>
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

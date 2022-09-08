@@ -5,16 +5,15 @@ import { CharactersCards } from "../component/charactersCards.jsx";
 import { PlanetCards } from "../component/planetCards.jsx";
 
 export const Home = () => (
-  <div className="row row-cols-1 row-cols-md-3 g-4">
+  <>
+  <div className="overflow-auto d-flex container-flex">
     <CharactersCards />
-    <CharactersCards />
-    <CharactersCards />
-    <CharactersCards />
+    </div>
 	<br />
 	<br />
+  <div className="overflow-auto d-flex container-flex">
 	<PlanetCards />
-	<PlanetCards />
-	<PlanetCards />
-	<PlanetCards />
+
   </div>
+  </>
 );
