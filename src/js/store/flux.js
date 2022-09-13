@@ -5,13 +5,14 @@ const getState = ({
 }) => {
     return {
         store: {
-            characters: [], // acumular el contenido de los characters de la api
+            characters: [], // acumular el contenido de los characters de la api, llegan como un array de objetos
             planets: [], // acumular el contenido de los planets de la api
+            charactersId: {}, // las llaves representan un objeto (los datos de la api llegan como objeto)
+            planetsId: {},
         },
         actions: {
             getCharacters: () => {
-
-                fetch("https://swapi.dev/api/people/")
+                fetch("https://www.swapi.tech/api/people/")
                     .then((response) => response.json()) // transformar el contenido en un json
                     .then((data) => setStore({
                         characters: data.results // results porque esta en la api 
@@ -20,21 +21,35 @@ const getState = ({
 
             getPlanets: () => {
 
-                fetch("https://swapi.dev/api/planets/")
+                fetch("https://www.swapi.tech/api/planets")
                     .then((response) => response.json()) // transformar el contenido en un json
                     .then((data) => setStore({
                         planets: data.results // results porque esta en la api 
+                    }))
+            },
+
+            getCharactersId: (id) => { // argumento se utiliza especificar los datos que se necesitan traer
+
+                fetch("https://www.swapi.tech/api/people/" + id)
+                    .then((response) => response.json()) // transformar el contenido en un json
+                    .then((data) => setStore({
+                        charactersId: data.result // result porque esta en la api 
+                    }))
+            },
+
+            getPlanetsId: (id) => {
+
+                fetch("https://www.swapi.tech/api/planets/" + id)
+                    .then((response) => response.json()) // transformar el contenido en un json
+                    .then((data) => setStore({
+                        planetsId: data.result // result porque esta en la api 
                     }))
             },
             // Use getActions to call a function within a fuction
             exampleFunction: () => {
                 getActions().changeColor(0, "green");
             },
-            loadSomeData: () => {
-                /**
-                	fetch().then().then(data => setStore({ "foo": data.bar }))
-                */
-            },
+
             changeColor: (index, color) => {
                 //get the store
                 const store = getStore();
