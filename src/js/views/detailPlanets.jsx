@@ -13,9 +13,14 @@ export const DetailPlanets = () => {
     <div className="card" style={{width: "18rem"}}>
       <img src={`https://starwars-visualguide.com/assets/img/planets/${store.planetsId?.uid}.jpg`} className="card-img-top" alt="..." />
       <div className="card-body">
-        <h5 className="card-title">{store.planetsId?.properties?.name}</h5>
+      <h5 className="card-title">{store.charactersId?.properties?.name}</h5>
         <p className="card-text">
-         
+        <p className="card-text">Gravity: <span className="text-warning">{store.planetsId?.properties?.gravity}</span> </p>
+        <p className="card-text">Climate: <span className="text-warning">{store.planetsId?.properties?.climate}</span></p>
+        <p className="card-text">Population: <span className="text-warning">{store.planetsId?.properties?.population}</span></p>
+        <p className="card-text">Terrain: <span className="text-warning">{store.planetsId?.properties?.terrain}</span></p>
+        <p className="card-text">Diameter: <span className="text-warning">{store.planetsId?.properties?.diameter}</span></p>
+        <p className="card-text">Orbital Period: <span className="text-warning">{store.planetsId?.properties?.orbital_period}</span></p>
           </p>
         <Link to="/" className="btn btn-primary">
           Go back

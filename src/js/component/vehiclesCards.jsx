@@ -8,8 +8,7 @@ export const VehiclesCards = () => {
     <>
       {store.vehicles.map((item, i) => {
         return (
-          <div className="container overflow">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card card m-2 text-start bg-dark text-light" style={{ width: "20rem" }}>
               <img
                 src={`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`}
                 className="card-img-top"
@@ -23,12 +22,11 @@ export const VehiclesCards = () => {
                 >
                  More info
                 </Link>
-                <a href="#" className="btn btn-outline-warning float-end">
+                <a href="#" onClick={()=>{actions.addFavorites(item.name)}} className="btn btn-outline-warning float-end">
                   💛
                 </a>
               </div>
             </div>
-          </div>
         );
       })}
     </>

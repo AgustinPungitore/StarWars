@@ -4,8 +4,13 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import injectContext from "./store/appContext";
-import {DetailCharacters} from "./views/detailCharacters.jsx"
+import {DetailCharacters} from "./views/detailCharacters.jsx";
 import { DetailPlanets } from "./views/detailPlanets.jsx";
+import {DetailSpecies} from "./views/detailSpecies.jsx";
+import {DetailStarships} from "./views/detailStarships.jsx";
+import {DetailVehicles} from "./views/detailVehicles.jsx";
+
+
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -31,8 +36,14 @@ const Layout = () => {
 						<Route exact path="/detailPlanets/:id">
 							<DetailPlanets/>
 						</Route>
-						<Route>
-							<h1>Not found!</h1>
+						<Route exact path="/detailStarships/:id">
+							<DetailStarships/>
+						</Route>
+						<Route exact path="/detailVehicles/:id">
+							<DetailVehicles/>
+						</Route>
+						<Route exact path="/detailSpecies/:id">
+							<DetailSpecies/>
 						</Route>
 					</Switch>
 					<Footer />

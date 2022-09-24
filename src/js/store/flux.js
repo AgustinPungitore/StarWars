@@ -10,6 +10,7 @@ const getState = ({
             vehicles: [],
             species: [],
             starships: [],
+            favorites: [],
             charactersId: {}, // las llaves representan un objeto (los datos de la api llegan como objeto)
             planetsId: {},
             vehiclesId: {},
@@ -17,6 +18,27 @@ const getState = ({
             starshipsId: {},
         },
         actions: {
+
+            addFavorites: (param) => {
+                const store = getStore();
+                if (store.favorites.includes(param)) {
+                    console.log("YA LO AGREGASTE COMO FAVORITO")
+                } else {
+                    setStore({
+                        favorites: [...store.favorites, param]
+                    })
+                }
+
+            },
+
+            deleteFavorites: (itemToDelete) => {
+                const store = getStore();
+                const newFavorites = store.favorites.filter((item) => item !== itemToDelete)
+                setStore({
+                    favorites: newFavorites
+                })
+            },
+
             getCharacters: () => {
                 fetch("https://www.swapi.tech/api/people/")
                     .then((response) => response.json()) // transformar el contenido en un json
@@ -59,6 +81,8 @@ const getState = ({
                         starships: data.results // results porque esta en la api 
                     }))
             },
+
+
 
             getCharactersId: (id) => { // argumento se utiliza especificar los datos que se necesitan traer
 

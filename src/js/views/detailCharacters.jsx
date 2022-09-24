@@ -15,9 +15,14 @@ export const DetailCharacters = () => {
       <div className="card-body">
         <h5 className="card-title">{store.charactersId?.properties?.name}</h5>
         <p className="card-text">
-         
+        <p className="card-text">Birth year: <span className="text-warning">{store.charactersId?.properties?.birth_year}</span> </p>
+        <p className="card-text">Height: <span className="text-warning">{store.charactersId?.properties?.height}</span></p>
+        <p className="card-text">Mass: <span className="text-warning">{store.charactersId?.properties?.mass}</span></p>
+        <p className="card-text">Skin Color: <span className="text-warning">{store.charactersId?.properties?.skin_color}</span></p>
+        <p className="card-text">Gender: <span className="text-warning">{store.charactersId?.properties?.gender}</span></p>
+        <p className="card-text">Brief description: <span className="text-warning">{store.charactersId?.description}</span></p>
           </p>
-        <Link to="/" className="btn btn-primary">
+        <Link to="/" className="btn btn-warning">
           Go back
         </Link>
       </div>
